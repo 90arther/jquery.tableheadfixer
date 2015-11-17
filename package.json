@@ -1,0 +1,30 @@
+{
+  "name": "jquery.tableheadfixer",
+  "version": "0.0.1",
+  "description": "固定表格头部在浏览器顶部",
+  "main": "jquery.tableheadfixer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/90arther/jquery.tableheadfixer.git"
+  },
+  "keywords": [
+    "table",
+    "jquery-plugin",
+    "head",
+    "fixed"
+  ],
+  "author": "90arther@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/90arther/jquery.tableheadfixer/issues"
+  },
+  "homepage": "https://github.com/90arther/jquery.tableheadfixer#readme",
+  "dependencies": {
+    "gulp-jshint": "^1.12.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.1"
+  }
+}
