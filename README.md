@@ -1,5 +1,12 @@
 # jquery.tableheadfixer
 
+
+## Require:
+* jQuery 1.7+
+
+## Demo & Example:
+<http://www.90arther.net/jquery-table-head-fixer/>
+
 ## Usage:
 
 ### HTML
@@ -31,6 +38,11 @@
 ### Javascript
 ```js
 $('#tableheadfixer').tableHeadFixer();
+
+```
+By default, background-color will be added. You can override default by passing the bgColor option:
+```js
+$('#tableheadfixer').tableHeadFixer({bgColor: #aaa});
 
 ```
 
