@@ -26,8 +26,7 @@
                 delayTimer  =  null,                // 事件节流
                 defaults    =  {
                 'bgColor'   : '#eee',           // 表头的背景颜色
-                'z-index'   : '0',              // 表头的z-index数
-                'transition': 'all 1s'          // 让表头缓缓移动
+                'z-index'   : '1'               // 表头的z-index数
             };
 
             options = $.extend({}, defaults, options);
@@ -45,25 +44,21 @@
                 // 添加屏幕滚动事件监听器
                 $(window).on('scroll', function() {
 
-                    if(!delayTimer) {
+                    //if(!delayTimer) {
+                        //delayTimer = setTimeout(function(){
+                            //delayTimer = null;
+                        //}, 20);
+                    //}
 
-                        delayTimer = setTimeout(function(){
+                    var top = Math.max(document.body.scrollTop, document.documentElement.scrollTop),
+                        left = Math.max(document.body.scrollLeft, document.documentElement.scrollLeft);
 
-                            var top = Math.max(document.body.scrollTop, document.documentElement.scrollTop),
-                                left = Math.max(document.body.scrollLeft, document.documentElement.scrollLeft);
-
-                                th.css({
-                                    'position'          : 'relative',
-                                    'top'               : (top > offset.top) ? (top - offset.top) : 0,
-                                    'background-color'  : options.bgColor,
-                                    'z-index'           : options['z-index'],
-                                    'transition'        : options.transition
-                                });
-
-                            delayTimer = null;
-
-                        }, 20);
-                    }
+                        th.css({
+                            'position'          : 'relative',
+                            'top'               : (top > offset.top) ? (top - offset.top) : 0,
+                            'background-color'  : options.bgColor,
+                            'z-index'           : options['z-index']
+                        });
 
                 });
 
