@@ -8,6 +8,10 @@
 <title>Table Head Fixer Demo</title>
 
 <style type="text/css">
+* {
+    margin: 0;
+    padding: 0;
+}
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -286,7 +290,10 @@ table th,table td {
 
 <script src="jquery.tableheadfixer.min.js"></script>
 <script type="text/javascript">
-$('#tableheadfixer').tableHeadFixer();
+$('#tableheadfixer').tableHeadFixer({
+        bgColor     : '#eee',
+        'z-index'   : 2
+        });
 </script>
 </body>
 </html>
