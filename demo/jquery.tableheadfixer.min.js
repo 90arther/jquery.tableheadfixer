@@ -12,6 +12,11 @@
 // 1、添加浏览器滚屏事件，实时获取已滚动屏幕的长宽
 // 2、设置头部相对定位
 // 3、头部th标签统一设置top属性为： 已滚动页面高度 减去 表格顶部距离页面顶部的距离
+//
+//
+// @Options:
+//      @bgColor: 背景颜色
+//      @z-index: z-index值
 
 ;(function($) {
 
@@ -44,28 +49,41 @@
                 // 添加屏幕滚动事件监听器
                 $(window).on('scroll', function() {
 
-                    //if(!delayTimer) {
-                        //delayTimer = setTimeout(function(){
-                            //delayTimer = null;
-                        //}, 20);
-                    //}
-
-                    var top = Math.max(document.body.scrollTop, document.documentElement.scrollTop),
-                        left = Math.max(document.body.scrollLeft, document.documentElement.scrollLeft);
-
-                        th.css({
-                            'position'          : 'relative',
-                            'top'               : (top > offset.top) ? (top - offset.top) : 0,
-                            'background-color'  : options.bgColor,
-                            'z-index'           : options['z-index']
-                        });
-
+                    fixHead();
+                    // setFixHeadTimer(0);
                 });
 
             }
 
-        }
 
+            function setFixHeadTimer(direction) {
+
+                if(!delayTimer) {
+                    delayTimer = setTimeout(function(){
+                        fixHead();
+                        delayTimer = null;
+                    }, direction);
+                }
+
+            }
+
+
+            function fixHead() {
+
+                var top = Math.max(document.body.scrollTop, document.documentElement.scrollTop),
+                    left = Math.max(document.body.scrollLeft, document.documentElement.scrollLeft);
+
+                th.css({
+                    //'position'          : 'relative',
+                    //'top'               : (top > offset.top) ? (top - offset.top) : 0,
+                    'transform'         : 'translate(0, '+ top +'px)',
+                    'background-color'  : options.bgColor,
+                    'z-index'           : options['z-index']
+                });
+            }
+
+
+        }
 
     });
 

@@ -33,6 +33,9 @@
         </tr>
     </tbody>
 </table>
+<!-- jQuery  -->
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="jquery.tableheadfixer.min.js"></script>
 ```
 
 ### Javascript
@@ -45,6 +48,11 @@ By default, background-color will be added. You can override default by passing 
 $('#tableheadfixer').tableHeadFixer({bgColor: #aaa});
 
 ```
+
+### Options
+
+>- bgColor: <String> 背景颜色
+>- z-index: <Number> z-index层级
 
 ### License
 The MIT License (MIT)
