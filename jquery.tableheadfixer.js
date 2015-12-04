@@ -30,8 +30,8 @@
                 th          =  this.find('th'),     // 获取表头th标签
                 delayTimer  =  null,                // 事件节流
                 defaults    =  {
-                'bgColor'   : '#eee',           // 表头的背景颜色
-                'z-index'   : '1'               // 表头的z-index数
+                'bgColor'   : '#eee',               // 表头的背景颜色
+                'z-index'   : '1'                   // 表头的z-index数
             };
 
             options = $.extend({}, defaults, options);
@@ -71,12 +71,14 @@
             function fixHead() {
 
                 var top = Math.max(document.body.scrollTop, document.documentElement.scrollTop),
-                    left = Math.max(document.body.scrollLeft, document.documentElement.scrollLeft);
+                    left = Math.max(document.body.scrollLeft, document.documentElement.scrollLeft),
+                    topValue = (top > offset.top) ? (top - offset.top) : 0;
+
 
                 th.css({
                     //'position'          : 'relative',
-                    //'top'               : (top > offset.top) ? (top - offset.top) : 0,
-                    'transform'         : 'translate(0, '+ top +'px)',
+                    //'top'               : topValue,
+                    'transform'         : 'translate(0, '+ topValue +'px)',
                     'background-color'  : options.bgColor,
                     'z-index'           : options['z-index']
                 });
